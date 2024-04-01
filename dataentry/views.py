@@ -4,7 +4,6 @@ from uploads.models import Upload
 from django.conf import settings
 from .tasks import import_data_task, export_data_task
 from django.contrib import messages
-from django.core.management import call_command
 
 
 def import_data(request):
@@ -55,4 +54,3 @@ def export_data(request):
             'custom_models': custom_models
         }
     return render(request, 'dataentry/exportdata.html', context)
-    
